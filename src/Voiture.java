@@ -3,7 +3,7 @@ public class Voiture extends Vehicule {
     public static int nbMaxVoiture = 10;
     public static int nbVoitures = 0;
 
-    private Voiture(int modele) {
+    public Voiture(int modele) {
         super(modele);
     }
 

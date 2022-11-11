@@ -33,10 +33,20 @@ public class Parc {
 
     public void lister() {
         for (int i = 0; i < this.T.length; i++) {
-            this.T[i].afficher();
+            if (this.T[i] != null) {
+                this.T[i].afficher();
+            }
         }
     }
 
     public static void main(String[] args) {
+        Parc parc = new Parc("Rue de la Paix", 10);
+        Voiture voiture = new Voiture(2010);
+        Camion camion = new Camion(2010);
+
+        parc.ajouter(voiture);
+        parc.ajouter(camion);
+
+        parc.lister();
     }
 }
