@@ -67,6 +67,12 @@ public class Vehicule {
     }
 
     public void afficher() {
-        System.out.println(this.toString());
+        System.out.println("********** Vehicule **********");
+        System.out.println(">> Matricule : " + this.getMatricule());
+        System.out.println(">> Modele    : " + this.getModele());
+        System.out.println(">> Carburant : " + this.getCarburant());
+        System.out.println(">> Panne     : " + this.isPanne());
+        System.out.println(">> Vendu     : " + this.isVendu());
+        System.out.println("******************************\n");
     }
 }
