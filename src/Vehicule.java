@@ -9,7 +9,7 @@ public class Vehicule {
 
     public Vehicule(int modele) {
         this.modele = modele;
-        this.matricule = "A" + UUID.randomUUID().getMostSignificantBits();
+        this.matricule = "Vehicule-" + UUID.randomUUID().toString();
         this.carburant = 0;
         this.panne = false;
         this.vendu = false;
