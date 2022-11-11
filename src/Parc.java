@@ -22,8 +22,8 @@ public class Parc {
         int index = -1;
 
         for (int i = 0; i < this.T.length; i++) {
-            if (this.T[i].getMatricule() == matricule) {
-                index = (i + 1);
+            if (this.T[i] != null && this.T[i].getMatricule().equals(matricule)) {
+                index = i;
                 break;
             }
         }
@@ -41,12 +41,30 @@ public class Parc {
 
     public static void main(String[] args) {
         Parc parc = new Parc("Rue de la Paix", 10);
-        Voiture voiture = new Voiture(2010);
-        Camion camion = new Camion(2010);
+        Voiture voiture_1 = new Voiture(2010);
+        Voiture voiture_2 = new Voiture(2011);
 
-        parc.ajouter(voiture);
-        parc.ajouter(camion);
+        Camion camion_1 = new Camion(2012);
+        Camion camion_2 = new Camion(2013);
+        Camion camion_3 = new Camion(2014);
+
+        voiture_1.setMatricule("AA-123-BC");
+        voiture_2.setMatricule("AA-456-BC");
+
+        parc.ajouter(voiture_1);
+        parc.ajouter(voiture_2);
+        parc.ajouter(camion_1);
+        parc.ajouter(camion_2);
+        parc.ajouter(camion_3);
 
         parc.lister();
+
+        int found = parc.rechercher("AA-123-BC");
+        if (found == -1) {
+            System.out.println("Vehicule non trouvé");
+        } else {
+            System.out.println("Vehicule trouvé à l'index " + found + ", et voici ses informations:");
+            parc.T[found].afficher();
+        }
     }
 }
