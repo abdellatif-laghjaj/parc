@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class Vehicule {
     private String matricule;
     private float carburant;
@@ -7,7 +9,7 @@ public class Vehicule {
 
     public Vehicule(int modele) {
         this.modele = modele;
-        this.matricule = "A" + (int) (Math.random() * 1000000);
+        this.matricule = "A-" + (int) UUID.randomUUID().getMostSignificantBits();
         this.carburant = 0;
         this.panne = false;
         this.vendu = false;
@@ -51,5 +53,20 @@ public class Vehicule {
 
     public void setVendu(boolean vendu) {
         this.vendu = vendu;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicule{" +
+                "matricule='" + matricule + '\'' +
+                ", carburant=" + carburant +
+                ", modele=" + modele +
+                ", panne=" + panne +
+                ", vendu=" + vendu +
+                '}';
+    }
+
+    public void afficher() {
+        System.out.println(this.toString());
     }
 }
