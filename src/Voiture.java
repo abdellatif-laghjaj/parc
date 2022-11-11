@@ -23,4 +23,8 @@ public class Voiture extends Vehicule {
         }
         return null;
     }
+
+    public int getCapacite() {
+        return capacite;
+    }
 }
