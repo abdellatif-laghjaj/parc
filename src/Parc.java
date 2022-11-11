@@ -51,6 +51,8 @@ public class Parc {
         voiture_1.setMatricule("AA-123-BC");
         voiture_2.setMatricule("AA-456-BC");
 
+        camion_1.setMatricule("AA-789-BC");
+
         parc.ajouter(voiture_1);
         parc.ajouter(voiture_2);
         parc.ajouter(camion_1);
@@ -59,12 +61,21 @@ public class Parc {
 
         parc.lister();
 
-        int found = parc.rechercher("AA-123-BC");
-        if (found == -1) {
-            System.out.println("Vehicule non trouvé");
+        int found_voiture = parc.rechercher("AA-123-BC");
+        int found_camion = parc.rechercher("AA-789-BC");
+
+        if (found_voiture == -1) {
+            System.out.println("Voiture non trouvée");
         } else {
-            System.out.println("Vehicule trouvé à l'index " + found + ", et voici ses informations:");
-            parc.T[found].afficher();
+            System.out.println("Voiture est trouvé dans la position " + (found_voiture + 1) + ", et voici ses informations:");
+            parc.T[found_voiture].afficher();
+        }
+
+        if (found_camion == -1) {
+            System.out.println("Camion non trouvé");
+        } else {
+            System.out.println("Camion est trouvé dans la position " + (found_camion + 1) + ", et voici ses informations:");
+            parc.T[found_camion].afficher();
         }
     }
 }
