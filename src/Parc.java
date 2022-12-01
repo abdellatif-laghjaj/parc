@@ -48,11 +48,6 @@ public class Parc {
         Camion camion_2 = new Camion(2013);
         Camion camion_3 = new Camion(2014);
 
-        voiture_1.setMatricule("AA-123-BC");
-        voiture_2.setMatricule("AA-456-BC");
-
-        camion_1.setMatricule("AA-789-BC");
-
         parc.ajouter(voiture_1);
         parc.ajouter(voiture_2);
         parc.ajouter(camion_1);
@@ -61,8 +56,8 @@ public class Parc {
 
         parc.lister();
 
-        int found_voiture = parc.rechercher("AA-123-BC");
-        int found_camion = parc.rechercher("AA-789-BC");
+        int found_voiture = parc.rechercher("Voiture-1");
+        int found_camion = parc.rechercher("Camion-2");
 
         if (found_voiture == -1) {
             System.out.println("Voiture non trouvée");

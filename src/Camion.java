@@ -5,6 +5,8 @@ public class Camion extends Vehicule {
 
     public Camion(int modele) {
         super(modele);
+        nbCamions++;
+        this.setMatricule("Camion-" + nbCamions);
     }
 
     public void setCapacite(int capacite) {

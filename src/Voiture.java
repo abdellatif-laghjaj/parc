@@ -5,6 +5,8 @@ public class Voiture extends Vehicule {
 
     public Voiture(int modele) {
         super(modele);
+        nbVoitures++;
+        this.setMatricule("Voiture-" + nbVoitures);
     }
 
     public void addCarburant(float c) {
